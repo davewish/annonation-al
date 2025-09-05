@@ -2,12 +2,16 @@ import React, { useState, useRef } from "react";
 import { Stage, Layer, Image, Rect, Text } from "react-konva";
 import { Canvas } from "@react-three/fiber";
 import { Box, OrbitControls } from "@react-three/drei";
+import io from "socket.io-client";
+import { useEffect } from "react";
+import { decode, encode } from "@msgpack/msgpack";
 
 const App = () => {
   const [rectangles, setRectangles] = useState([]);
   const [aiSuggestions, setAiSuggestions] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const stageRef = useRef(null);
+  const [status, setStatus] = useState("Connecting");
 
   const [rectSize, setRectSize] = useState({ width: 50, height: 50 });
   const [label, setLabel] = useState("car");
@@ -17,10 +21,9 @@ const App = () => {
     width: 400,
     height: 300,
   });
-
+  let socket = useRef(null);
   const [viewMode, setViewMode] = useState("2D");
   const [threeDBoxes, setThreeDBoxes] = useState([
-    // 3D bounding boxes
     {
       position: [0, 0, 0],
       scale: [1, 1, 1],
@@ -29,6 +32,28 @@ const App = () => {
       confidence: 0.95,
     },
   ]);
+
+  useEffect(() => {
+    socket.current = io("wss:localhost:3001", {
+      auth: { token: "token-here" },
+      reconnectionAttempts: 5,
+      timeout: 10000,
+      transports: ["websocket"],
+    });
+    socket.current.on("connect", () => setStatus("Connected"));
+    socket.current.on("disconnect", () => setStatus("Disconnected"));
+    socket.current.on("aSuggestion", (encodeData) => {
+      try {
+        const suggestions = decode(encodeData);
+        setAiSuggestions(suggestions.map((s) => ({ ...s, id: Date.now() })));
+      } catch (error) {
+        console.error("Decode Error:", error);
+      }
+    });
+    return () => {
+      socket.current.disconnect();
+    };
+  }, []);
 
   // Handle file input
   const handleImageUpload = (event) => {
@@ -52,19 +77,10 @@ const App = () => {
 
   // Simulate AI model for suggestions
   const generateAiSuggestions = () => {
-    const suggestions = [];
-    for (let i = 0; i < 3; i++) {
-      suggestions.push({
-        id: Date.now() + i,
-        x: Math.random() * 300,
-        y: Math.random() * 200,
-        width: Math.random() * 100 + 50,
-        height: Math.random() * 100 + 50,
-        label: ["car", "pedestrian", "lane"][Math.floor(Math.random() * 3)],
-        confidence: Math.random() * 0.5 + 0.5,
-      });
+    if (isImageLoaded) {
+      const imageData = stageRef.current.toDataURL();
+      socket.current.emit("aiSuggestion", encode({ image: imageData }));
     }
-    setAiSuggestions(suggestions);
   };
 
   const handleDragStart = (e) => {
@@ -163,6 +179,7 @@ const App = () => {
 
   return (
     <div>
+      <h3>Status: {status}</h3>
       <h4>Annotation Tool for ADAS</h4>
       <button onClick={() => setViewMode(viewMode === "2D" ? "3D" : "2D")}>
         Switch to {viewMode === "2D" ? "3D" : "2D"}
