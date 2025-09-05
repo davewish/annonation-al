@@ -6,7 +6,7 @@ I am currently using this project to**  **learn about Advanced Driver Assistance
 
 * **Labeling and annotating driving data** (images, videos, sensor data).
 * **Connecting annotated data to AI agent models** for perception and decision-making tasks.
-* Understanding how** **ADAS pipelines** integrate with AI systems.
+* Understanding how  **ADAS pipelines** integrate with AI systems.
 
 ---
 
@@ -27,7 +27,7 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in interactive watch mode.
-See the section about** **[running tests](https://facebook.github.io/create-react-app/docs/running-tests?utm_source=chatgpt.com) for more information.
+See the section about **[running tests](https://facebook.github.io/create-react-app/docs/running-tests?utm_source=chatgpt.com)** for more information.
 
 ---
 
@@ -45,7 +45,7 @@ See** **[deployment](https://facebook.github.io/create-react-app/docs/deployment
 
 ### `npm run eject`
 
-**Warning:** this is a one-way operation. Once you** **`eject`, you cannot go back!
+**Warning:** this is a one-way operation. Once you`eject`, you cannot go back!
 
 This command copies all configuration files and dependencies into your project for full control (Webpack, Babel, ESLint, etc.).
 
