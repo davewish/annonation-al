@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Getting Started with Create React App – ADAS Learning Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with** **[Create React App](https://github.com/facebook/create-react-app?utm_source=chatgpt.com).
+
+I am currently using this project to** ** **learn about Advanced Driver Assistance Systems (ADAS)** , specifically:
+
+* **Labeling and annotating driving data** (images, videos, sensor data).
+* **Connecting annotated data to AI agent models** for perception and decision-making tasks.
+* Understanding how** ****ADAS pipelines** integrate with AI systems.
+
+---
 
 ## Available Scripts
 
@@ -8,63 +16,62 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in development mode.
+Open** **[http://localhost:3000](http://localhost:3000/) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
+
+---
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode.
+See the section about** **[running tests](https://facebook.github.io/create-react-app/docs/running-tests?utm_source=chatgpt.com) for more information.
+
+---
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the** **`build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and filenames include hashes.
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See** **[deployment](https://facebook.github.io/create-react-app/docs/deployment?utm_source=chatgpt.com) for details.
+
+---
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Warning:** this is a one-way operation. Once you** **`eject`, you cannot go back!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This command copies all configuration files and dependencies into your project for full control (Webpack, Babel, ESLint, etc.).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You don’t have to use it unless you want to** ** **customize the build process** .
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Learn More – ADAS & AI Focus
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the** **[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started?utm_source=chatgpt.com).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the** **[React documentation](https://reactjs.org/?utm_source=chatgpt.com).
 
-### Code Splitting
+For this project, I am focusing on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **Labeling & annotating sensor and video data** for autonomous driving.
+* **Connecting annotated datasets to AI models** for tasks such as lane detection, object recognition, and ADAS decision-making.
+* **Experimenting with AI agents** to simulate and test ADAS scenarios.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Advanced Sections
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting?utm_source=chatgpt.com)
+* [Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size?utm_source=chatgpt.com)
+* [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app?utm_source=chatgpt.com)
+* [Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration?utm_source=chatgpt.com)
+* [Deployment](https://facebook.github.io/create-react-app/docs/deployment?utm_source=chatgpt.com)
+* [Troubleshooting Build Minification](https://facebook.github.io/create-react-app/docs/troubleshooting?utm_source=chatgpt.com#npm-run-build-fails-to-minify)
